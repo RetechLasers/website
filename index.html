@@ -60,6 +60,7 @@
             color: white;
             padding: 10px 0;
             text-align: center;
+            font-size: 14px;
         }
         
         .top-bar a {
@@ -77,12 +78,18 @@
             justify-content: space-between;
             align-items: center;
             padding: 15px 0;
+            position: relative;
         }
         
         .logo {
             font-size: 24px;
             font-weight: 700;
             color: #0066cc;
+        }
+        
+        .logo img {
+            max-width: 150px;
+            height: auto;
         }
         
         .logo span {
@@ -111,13 +118,16 @@
             display: none;
             font-size: 24px;
             cursor: pointer;
+            background: none;
+            border: none;
+            color: #0066cc;
         }
         
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #0066cc, #00ccff);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
         }
         
@@ -132,14 +142,21 @@
             margin: 0 auto 30px;
         }
         
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
         /* Products Section */
         .products {
-            padding: 80px 0;
+            padding: 60px 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
         
         .section-title h2 {
@@ -211,7 +228,7 @@
         
         /* Features Section */
         .features {
-            padding: 80px 0;
+            padding: 60px 0;
             background-color: #f0f7ff;
         }
         
@@ -243,7 +260,7 @@
         .cta {
             background: linear-gradient(135deg, #ff6600, #ff9933);
             color: white;
-            padding: 80px 0;
+            padding: 60px 0;
             text-align: center;
         }
         
@@ -262,7 +279,7 @@
         footer {
             background-color: #222;
             color: #ddd;
-            padding: 50px 0 20px;
+            padding: 40px 0 20px;
         }
         
         .footer-content {
@@ -338,61 +355,132 @@
             padding-top: 20px;
             border-top: 1px solid #444;
             color: #999;
+            font-size: 14px;
         }
         
         /* Mobile Styles */
         @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
+            .top-bar {
+                font-size: 12px;
+                padding: 8px 0;
             }
             
-            .logo {
-                margin-bottom: 15px;
+            .header-content {
+                flex-direction: row;
+                text-align: left;
+                padding: 10px 0;
+            }
+            
+            .logo img {
+                max-width: 120px;
             }
             
             nav ul {
+                display: none;
                 flex-direction: column;
-                align-items: center;
+                align-items: flex-start;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 99;
+            }
+            
+            nav ul.show {
+                display: flex;
             }
             
             nav ul li {
                 margin: 10px 0;
+                width: 100%;
+            }
+            
+            nav ul li a {
+                display: block;
+                padding: 10px 0;
             }
             
             .mobile-menu-btn {
                 display: block;
-                margin-top: 15px;
+            }
+            
+            .hero {
+                padding: 40px 0;
             }
             
             .hero h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+                margin-bottom: 15px;
             }
             
             .hero p {
                 font-size: 1rem;
+                margin-bottom: 20px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            
+            .hero-btns .btn {
+                width: 100%;
+                max-width: 250px;
+                margin-left: 0 !important;
             }
             
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             
             .product-grid, .feature-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .product-img {
+                height: 180px;
+            }
+            
+            .feature-card {
+                padding: 20px;
             }
             
             .footer-content {
                 grid-template-columns: 1fr;
-                text-align: center;
+                gap: 20px;
+                text-align: left;
             }
             
             .social-links {
-                justify-content: center;
+                justify-content: flex-start;
             }
             
             .business-hours li {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
+            }
+            
+            .copyright {
+                font-size: 12px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+            
+            .section-title h2, .cta h2 {
+                font-size: 1.4rem;
+            }
+            
+            .product-info h3, .feature-card h3, .footer-column h3 {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -409,7 +497,7 @@
        <div class="container">
             <div class="header-content">
                 <a href="#home" class="logo">
-                    <img src="logo.jpeg" alt="RETECH LASERS Logo">
+                    <img src="logo.png" alt="RETECH LASERS Logo">
                 </a>
 
                 <nav>
@@ -421,7 +509,7 @@
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn">Contact</a></li>
                     </ul>
                 </nav>
-                <div class="mobile-menu-btn">☰</div>
+                <button class="mobile-menu-btn">☰</button>
             </div>
         </div>
     </header>
@@ -431,8 +519,10 @@
         <div class="container">
             <h1>From Concept to Creation, Navigate with Laser Precision Using Our Laser Cutting Machines</h1>
             <p>Elevate Your Projects with Our Innovative Laser Cutting Machine.</p>
-            <a href="#products" class="btn">Explore Products</a>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn" style="background-color: #ff6600; margin-left: 15px;">Get a Quote</a>
+            <div class="hero-btns">
+                <a href="#products" class="btn">Explore Products</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn" style="background-color: #ff6600;">Get a Quote</a>
+            </div>
         </div>
     </section>
 
@@ -451,13 +541,13 @@
                     <div class="product-info">
                         <h3>Plotbot Plus</h3>
                         <p>A more advanced model designed for complex and detailed work, the laser engraving machine is perfect for artists and professionals seeking high-quality precision and exceptional results.</p>
-                       
+                        
                         <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn">Enquire Now</a>
                     </div>
                 </div>
                 <div class="product-card">
                     <div class="product-img">
-                        <img src="Plotbot Pro.jpeg" alt="Plotbot Pro">
+                        <img src="Plotbot Pro.jpeg" alt="Potbot Pro">
                     </div>
                     <div class="product-info">
                         <h3>Plotbot Pro</h3>
@@ -546,7 +636,6 @@
                         <li><a href="#">Shipping Policy</a></li>
                         <li><a href="#">Return Policy</a></li>
                         <li><a href="#">Product Support</a></li>
-                        
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -557,7 +646,6 @@ No. 28, Sundar Nagar Extension, Varatharajapuram, Kundrathur, Tambaram, Chennai,
 Tamil Nadu 600048.</p>
                         <p><i class="fas fa-phone"></i> 755 994 8114, 755 994 8144</p>
                         <p><i class="fas fa-envelope"></i> plotbotcustomercare@gmail.com</p>
-                        
                     </div>
                     <div class="business-hours">
                         <h4>Business Hours</h4>
@@ -570,26 +658,36 @@ Tamil Nadu 600048.</p>
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 TechGadgets. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2023 RETECH LASERS. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Simple mobile menu toggle
+        // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
             document.querySelector('nav ul').classList.toggle('show');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('show');
+            });
         });
         
         // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                if (this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
             });
         });
-    </script>
+   
+ </script>
 </body>
 </html>
