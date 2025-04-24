@@ -122,6 +122,36 @@
             border: none;
             color: #0066cc;
         }
+
+        /* Call Now Button Styles */
+        .call-btn {
+            background-color: #28a745 !important;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .call-btn:hover {
+            background-color: #218838 !important;
+            transform: translateY(-2px);
+        }
+
+        .call-now-btn {
+            margin-left: 15px;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+            }
+        }
         
         /* Hero Section */
         .hero {
@@ -402,6 +432,10 @@
                 display: block;
                 padding: 10px 0;
             }
+
+            .call-now-btn {
+                margin-left: 0;
+            }
             
             .mobile-menu-btn {
                 display: block;
@@ -507,6 +541,11 @@
                         <li><a href="#features">Features</a></li>
                         <li><a href="#about">About</a></li>
                         <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn">Contact</a></li>
+                        <li class="call-now-btn">
+                            <a href="tel:+917448800116" class="btn call-btn">
+                                <i class="fas fa-phone"></i> Call Now
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <button class="mobile-menu-btn">☰</button>
@@ -649,7 +688,7 @@
                         <p><i class="fas fa-map-marker-alt"></i>Retech Lasers Private Limited
 No. 28, Sundar Nagar Extension, Varatharajapuram, Kundrathur, Tambaram, Chennai,
 Tamil Nadu 600048.</p>
-                        <p><i class="fas fa-phone"></i> 9688881198,7448800116</p>
+                        <p><i class="fas fa-phone"></i> <a href="tel:+919688881198">9688881198</a>, <a href="tel:+917448800116">7448800116</a></p>
                         <p><i class="fas fa-envelope"></i> plotbotcustomercare@gmail.com</p>
                     </div>
                     <div class="business-hours">
@@ -692,7 +731,12 @@ Tamil Nadu 600048.</p>
                 }
             });
         });
-   
- </script>
+
+        // Add click event for call button to track calls
+        document.querySelector('.call-btn').addEventListener('click', function() {
+            // You can add analytics tracking here
+            console.log('Call button clicked');
+        });
+    </script>
 </body>
 </html>
