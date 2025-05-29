@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -157,6 +158,33 @@
             100% {
                 box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
             }
+        }
+
+        /* WhatsApp Button Styles */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #20b358;
+            transform: scale(1.1);
+        }
+
+        .whatsapp-btn i {
+            font-size: 30px;
+            color: white;
         }
         
         /* Hero Section */
@@ -516,6 +544,15 @@
             .copyright {
                 font-size: 12px;
             }
+            
+            .whatsapp-btn {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .whatsapp-btn i {
+                font-size: 24px;
+            }
         }
         
         @media (max-width: 480px) {
@@ -535,6 +572,15 @@
                 padding: 5px 10px;
                 font-size: 11px;
             }
+            
+            .whatsapp-btn {
+                width: 45px;
+                height: 45px;
+            }
+            
+            .whatsapp-btn i {
+                font-size: 22px;
+            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -545,7 +591,7 @@
         <div class="top-bar">
             <div class="container">
                 <div class="top-bar-text">
-                    For more enquiries, <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank">click here to contact us</a>
+                    For more enquiries, <a href="https://retechlasers.com/contact-2/" >click here to contact us</a>
                 </div>
                 <a href="tel:+917448800116" class="btn call-btn">
                     <i class="fas fa-phone"></i> Call Now
@@ -557,14 +603,13 @@
                 <a href="#home" class="logo">
                     <img src="logo.png" width=300 height=300 alt="RETECH LASERS Logo">
                 </a>
-
                 <nav>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="#features">Features</a></li>
                         <li><a href="https://retechlasers.com/about-laser-cutting-machines/">About</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn">Contact</a></li>
+                        <li><a href="https://retechlasers.com/contact-2/"  class="btn">Contact</a></li>
                     </ul>
                 </nav>
                 <button class="mobile-menu-btn">☰</button>
@@ -578,8 +623,8 @@
             <h1>From Concept to Creation, Navigate with Laser Precision Using Our Laser Cutting Machines</h1>
             <p>Elevate Your Projects with Our Innovative Laser Cutting Machine.</p>
             <div class="hero-btns">
-                <a href="#products" class="btn">Explore Products</a>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn" style="background-color: #ff6600;">Get a Quote</a>
+                <a href="https://retechlasers.com/" class="btn">Explore Products</a>
+                <a href="https://retechlasers.com/contact-2/"  class="btn" style="background-color: #ff6600;">Get a Quote</a>
             </div>
         </div>
     </section>
@@ -664,7 +709,7 @@
         <div class="container">
             <h2>Ready to Experience the Future?</h2>
             <p>Contact our sales team today to learn more about our products and get personalized recommendations for your needs.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank" class="btn" style="background-color: white; color: #ff6600;">Contact Us Now</a>
+            <a href="https://retechlasers.com/contact-2/"  class="btn" style="background-color: white; color: #ff6600;">Contact Us Now</a>
         </div>
     </section>
 
@@ -687,7 +732,7 @@
                         <li><a href="#home">Home</a></li>
                         <li><a href="#products">Products</a></li>
                         <li><a href="https://retechlasers.com/about-laser-cutting-machines/">About Us</a></li>
-                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfSKf5QemR4rL1rM8MzLKyJfUsaebPxrcmg5KjKl_7tGc4CmQ/viewform?usp=dialog" target="_blank">Contact Form</a></li>
+                        <li><a href="https://retechlasers.com/contact-2/" >Contact Form</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -724,6 +769,11 @@ Tamil Nadu 600048.</p>
         </div>
     </footer>
 
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917448800116" target="_blank" class="whatsapp-btn">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
@@ -752,6 +802,11 @@ Tamil Nadu 600048.</p>
         // Add click event for call button to track calls
         document.querySelector('.call-btn').addEventListener('click', function() {
             console.log('Call button clicked');
+        });
+
+        // Add click event for WhatsApp button to track clicks
+        document.querySelector('.whatsapp-btn').addEventListener('click', function() {
+            console.log('WhatsApp button clicked');
         });
     </script>
 </body>
